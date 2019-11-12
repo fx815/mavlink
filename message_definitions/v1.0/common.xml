@@ -5885,6 +5885,7 @@
       <description>A estimator using optical flow array formed by 6 PMW3901 optical flow motion counters, to estimate the optical flow divergence and the perching incidence angle</description>
       <field type="float" name="tau" units="1/s">V over D, approaching speed divided by distance to wall, equivalent as optical flow divergence</field>
       <field type="float" name="theta" units="degree">approaching angle w.r.t. the wall</field>
+    </message>
     <message id="12900" name="OPEN_DRONE_ID_BASIC_ID">
       <wip/>
       <!-- This message is work-in-progress and it can therefore change, and should NOT be used in stable production environments -->
