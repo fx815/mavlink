@@ -6182,7 +6182,8 @@
       <description>A estimator using optical flow array formed by 6 PMW3901 optical flow motion counters, to estimate the optical flow divergence and the perching incidence angle; force measurement from force sensor, flex or singletact, or fibre</description>
       <field type="float" name="tau" units="1/s">V over D, approaching speed divided by distance to wall, equivalent as optical flow divergence</field>
       <field type="float" name="theta" units="degree">approaching angle w.r.t. the wall</field>
-      <field type="float" name="force" units="unit">force representation from force sensor</field>
+      <field type="float" name="left_force" units="unit">force representation from force sensor</field>
+      <field type="float" name="right_force" units="unit">force representation from force sensor</field>
     </message>
     <message id="12900" name="OPEN_DRONE_ID_BASIC_ID">
       <wip/>
