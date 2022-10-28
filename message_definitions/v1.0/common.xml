@@ -6178,12 +6178,20 @@
       <field type="double[16]" name="distance" units="m">Distance reported by individual wheel encoders. Forward rotations increase values, reverse rotations decrease them. Not all wheels will necessarily have wheel encoders; the mapping of encoders to wheel positions must be agreed/understood by the endpoints.</field>
     </message>
     <!--Custom message: Optical flow array used for tau and theta estimator -->
-    <message id="555" name="OPTICAL_FLOW_TAU_THETA">
-      <description>A estimator using optical flow array formed by 6 PMW3901 optical flow motion counters, to estimate the optical flow divergence and the perching incidence angle; force measurement from force sensor, flex or singletact, or fibre</description>
+    <message id="555" name="OPTICAL_FLOW_FLEX">
+      <description>A estimator using a pair of optical flow sensors to estimate the optical flow divergence and the perching incidence angle; force measurement from force sensor, flex or singletact, or fibre</description>
       <field type="float" name="tau" units="1/s">V over D, approaching speed divided by distance to wall, equivalent as optical flow divergence</field>
-      <field type="float" name="theta" units="degree">approaching angle w.r.t. the wall</field>
+      <field type="float" name="raw_tau" units="1/s">OFD before filters</field>
       <field type="float" name="left_force" units="unit">force representation from force sensor</field>
       <field type="float" name="right_force" units="unit">force representation from force sensor</field>
+    </message>
+    <message id="556" name="PROXIMITY_NN">
+      <description>A neural network that takes audio and OFD data as input and outputs 0/1 alarm for proximity</description>
+      <field type="float" name="tau" units="1/s">V over D, approaching speed divided by distance to wall, equivalent as optical flow divergence</field>
+      <field type="float" name="nn_output" units="unit">neural network output</field>
+      <field type="uint8_t" name="nn_judge" units="unit">neural network stable output</field>
+      <field type="float[10]" name="features" units="unit">neural network input features</field>
+      <field type="float[10]" name="nn_input" units="unit">neural network scaled input</field>
     </message>
     <message id="12900" name="OPEN_DRONE_ID_BASIC_ID">
       <wip/>
